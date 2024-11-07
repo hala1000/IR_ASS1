@@ -202,7 +202,7 @@ def prepare_document_dicts(
     queries_relevant_docs: Dict[str, List[str]] = {}
     for _, row in relevant_data.iterrows():
         query_id = str(row['Query_number'])
-        document_name = row['doc_number']
+        document_name = str(row['doc_number'])
         queries_relevant_docs.setdefault(query_id, []).append(document_name)
         logger.debug(f"Relevant - Query ID: {query_id}, Document: {document_name}")
 
